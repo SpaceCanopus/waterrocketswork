@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Rocket Simulation</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .slider-container {
+            margin-bottom: 20px;
+        }
+        .slider-label {
+            margin-right: 10px;
+        }
+        .graphs-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); /* Three columns */
+            gap: 10px; /* Smaller gap */
+        }
+
+        .graph {
+            padding: 5px; /* Reduced padding */
+            border: 1px solid #ddd;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <label for="psi-slider" class="slider-label">Gauge Pressure (PSI):</label>
+        <input type="range" id="psi-slider" min="10" max="60" value="60" step="1" />
+        <span id="psi-value">60</span> PSI
+    </div>
+    <div class="slider-container">
+        <label for="v-slider" class="slider-label">Volume of Water:</label>
+        <input type="range" id="v-slider" min="0" max="500" value="250" step="10" />
+        <span id="v-value">250</span> ml
+    </div>
+    <div class="graphs-container">
+        <div id="pressure-graph" class="graph"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
